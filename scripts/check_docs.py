@@ -18,8 +18,12 @@ def main():
             assert (path.parent / target.split('#')[0]).exists(), f'Broken link: {path.name}: {target}'
             checked += 1
     assets = list((ROOT/'docs/assets').glob('*.svg'))
-    assert len(assets) == 3
+    expected = {'angelnet-hero.svg', 'archive-pipeline.svg', 'evidence-boundary.svg',
+                'review-flow.svg', 'pilot-results.svg'}
+    assert {path.name for path in assets} == expected, 'README illustration set differs'
+    readme = (ROOT/'README.md').read_text()
     for path in assets:
+        assert f'docs/assets/{path.name}' in readme, f'Unused README illustration: {path.name}'
         text = path.read_text()
         root = ET.fromstring(text)
         assert root.attrib.get('viewBox')

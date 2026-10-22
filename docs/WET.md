@@ -1,6 +1,6 @@
 # Common Crawl WET with RuVector
 
-This extension adds local WET parsing and native RuVector retrieval to Angel Index. It follows the archive ingestion architecture in [RuVector ADR 120](https://github.com/ruvnet/RuVector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/docs/adr/ADR-120-wet-processing-pipeline.md). The inspected upstream revision was `46d816ddc4c2a8a06cd3613534a79b1d557d858b`.
+This extension adds local WET parsing and native RuVector retrieval to AngelNet. It follows the archive ingestion architecture in [RuVector ADR 120](https://github.com/ruvnet/RuVector/blob/46d816ddc4c2a8a06cd3613534a79b1d557d858b/docs/adr/ADR-120-wet-processing-pipeline.md). The inspected upstream revision was `46d816ddc4c2a8a06cd3613534a79b1d557d858b`.
 
 The upstream importer targets a shared brain service and detects record starts by lines. This implementation uses local storage, byte lengths, explicit provenance and bounded reads. No shared brain injection, training, messaging, infrastructure provisioning or recurring job is enabled.
 
@@ -46,7 +46,7 @@ Defaults: scan at most 10,000 records, retain at most 1,000 matched documents, r
 
 Vector builds examine at most 1,000 JSONL lines by default, at most 10,000 with `--limit`, and reject input files above 100 MiB. One million 384 dimensional float32 vectors require 1.536 GB for raw vector values alone, before graph, metadata and page text. Filter records before embedding and partition larger runs. That arithmetic is a storage lower bound, not a measured capacity claim.
 
-There are no paid API calls. Existing ruOS host charges and archive transfer costs depend on the execution environment. No whole crawl download was launched. Downloaded real evidence is only the official 3,006 byte `whirlwind.warc.wet.gz` sample. The sample is a Wikipedia page and validates parsing, not discovery of neglected PHP sites.
+There are no paid API calls. Existing ruOS host charges and archive transfer costs depend on the execution environment. No whole crawl download was launched. The real WET format check uses only the official 3,006 byte `whirlwind.warc.wet.gz` sample. The sample is a Wikipedia page and validates parsing, not discovery of neglected PHP sites. The separate [static discovery pilot](STATIC.md) downloads index metadata.
 
 ## Acceptance
 
@@ -58,4 +58,4 @@ node wet_vectors.mjs build --input sample-output/wet-documents.jsonl --store sam
 node wet_vectors.mjs search --store sample-output/vectors --query Escopete --k 1
 ```
 
-Expected: 27 Python tests and one native vector integration test pass. The real sample has two WARC records, one text document and zero PHP candidates. A second import adds zero documents. The vector test verifies persistence and known text ranking across separate processes, provenance retention and rejection of a model mismatch. It does not measure semantic relevance on an independently labeled corpus.
+Expected: 45 Python tests and one native vector integration test pass. The real sample has two WARC records, one text document and zero PHP candidates. A second import adds zero documents. The vector test verifies persistence and known text ranking across separate processes, provenance retention and rejection of a model mismatch. It does not measure semantic relevance on an independently labeled corpus.

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<title id="title">The evidence needed before advisory review</title>
+<desc id="desc">The queue asks for an owner inventory, web runtime scope, current build evidence and review readiness. Missing or stale facts stay in the queue. The software does not verify owner identity, patch status or vulnerability, and advisory matching is planned.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101f30"/><stop offset="1" stop-color="#09131f"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#269e99" stop-opacity=".26"/><stop offset="1" stop-color="#269e99" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#345267" stroke-width=".5"/></pattern>
+<style>
+text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ink{fill:#edf5ff}.muted{fill:#b0bfd0}.cyan{fill:#70ead6}.amber{fill:#ffd398}.lilac{fill:#b9b5ff}
+.flow{stroke-dasharray:5 13;animation:flow 5s linear infinite}
+.glow{animation:glow 6s ease-in-out infinite}
+.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 28s linear infinite}
+.lift{animation:lift 7s ease-in-out infinite}
+.phase{animation:phase 12s ease-in-out infinite}
+.p2{animation-delay:3s}.p3{animation-delay:6s}.p4{animation-delay:9s}
+@keyframes flow{to{stroke-dashoffset:-108}}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes phase{0%,30%,100%{stroke-opacity:.25}10%,20%{stroke-opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.glow{opacity:1}.phase{stroke-opacity:1}}
+</style>
+</defs>
+<rect width="1200" height="520" rx="22" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="518" rx="21" fill="url(#grid)" opacity=".3" stroke="#456073"/>
+<text x="42" y="40" class="cyan" font-size="13" font-weight="700" letter-spacing="2">03 / REVIEW</text><text x="42" y="83" class="ink" font-size="30" font-weight="650" >Make the next step explicit.</text><text x="42" y="116" class="muted" font-size="18" font-weight="400" >Complete supplied facts prepare a case for advisory review. They do not confirm a flaw.</text><path d="M300 247H330" fill="none" stroke="#2b4358" stroke-width="3"/><path d="M300 247H330" fill="none" stroke="#ffd398" stroke-width="2" class="flow"/><path d="M590 247H620" fill="none" stroke="#2b4358" stroke-width="3"/><path d="M590 247H620" fill="none" stroke="#ffd398" stroke-width="2" class="flow"/><path d="M880 247H910" fill="none" stroke="#2b4358" stroke-width="3"/><path d="M880 247H910" fill="none" stroke="#ffd398" stroke-width="2" class="flow"/><rect x="42" y="177" width="258" height="183" rx="14" fill="#112333" stroke="#ffd398" class="phase p1" stroke-width="2"/><text x="60" y="207" class="amber" font-size="15" font-weight="700" >01</text><text x="60" y="247" class="ink" font-size="21" font-weight="650" >Owner inventory</text><text x="60" y="286" class="muted" font-size="16" font-weight="400" >Who supplied it?</text><text x="60" y="325" class="muted" font-size="15" font-weight="400" >Source + reference</text><rect x="332" y="177" width="258" height="183" rx="14" fill="#112333" stroke="#ffd398" class="phase p2" stroke-width="2"/><text x="350" y="207" class="amber" font-size="15" font-weight="700" >02</text><text x="350" y="247" class="ink" font-size="21" font-weight="650" >Web runtime</text><text x="350" y="286" class="muted" font-size="16" font-weight="400" >What serves this site?</text><text x="350" y="325" class="muted" font-size="15" font-weight="400" >Scope + observation date</text><rect x="622" y="177" width="258" height="183" rx="14" fill="#112333" stroke="#ffd398" class="phase p3" stroke-width="2"/><text x="640" y="207" class="amber" font-size="15" font-weight="700" >03</text><text x="640" y="247" class="ink" font-size="21" font-weight="650" >Build evidence</text><text x="640" y="286" class="muted" font-size="16" font-weight="400" >Which package is live?</text><text x="640" y="325" class="muted" font-size="15" font-weight="400" >Version + vendor + build</text><rect x="912" y="177" width="238" height="183" rx="14" fill="#112333" stroke="#ffd398" class="phase p4" stroke-width="2"/><text x="930" y="207" class="amber" font-size="15" font-weight="700" >04</text><text x="930" y="247" class="ink" font-size="21" font-weight="650" >Review readiness</text><text x="930" y="286" class="muted" font-size="16" font-weight="400" >Which advisory applies?</text><text x="930" y="325" class="muted" font-size="15" font-weight="400" >Matching is planned</text><path d="M1040 378V411H171V378" fill="none" stroke="#2b4358" stroke-width="3"/><path d="M1040 378V411H171V378" fill="none" stroke="#b9b5ff" stroke-width="2" class="flow"/><text x="600" y="451" class="lilac" font-size="22" font-weight="550" text-anchor="middle">Missing or stale facts stay in the queue.</text><text x="600" y="487" class="muted" font-size="17" font-weight="400" text-anchor="middle">Owner identity, patch status and vulnerability are not verified by this workflow.</text>
+</svg>

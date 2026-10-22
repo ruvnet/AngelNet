@@ -1,18 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="490" viewBox="0 0 1280 490" role="img" aria-labelledby="title desc">
-<title id="title">Observed facts and unknown security state</title><desc id="desc">Observed URLs, dates and hashes stay separate from unknown runtime, ownership, maintenance and exploitability. Owner or host verification is required before a repair decision.</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101e35"/><stop offset="1" stop-color="#080f20"/></linearGradient>
-<radialGradient id="halo"><stop stop-color="#1b8f96" stop-opacity=".35"/><stop offset="1" stop-color="#1b8f96" stop-opacity="0"/></radialGradient>
-<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#263651" stroke-width=".5"/></pattern>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<title id="title">Three evidence categories: observed, supplied, unassessed</title>
+<desc id="desc">Archive URLs, dates and sources are observations. Owner runtime and build exports are supplied claims that still need verification. Current vulnerability, patch status and maintenance history remain unassessed.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101f30"/><stop offset="1" stop-color="#09131f"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#269e99" stop-opacity=".26"/><stop offset="1" stop-color="#269e99" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#345267" stroke-width=".5"/></pattern>
 <style>
-text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.ink{fill:#eef5ff}.muted{fill:#a9b8d0}.cyan{fill:#65e8db}.amber{fill:#ffce83}
-.travel{stroke-dasharray:8 18;animation:flow 3s linear infinite}
-.pulse{animation:glow 4s ease-in-out infinite}.slow{animation:glow 5s ease-in-out infinite;animation-delay:1s}
-@keyframes flow{to{stroke-dashoffset:-104}}
-@keyframes glow{0%,100%{opacity:.4}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}.pulse,.slow{opacity:1}}
-</style></defs>
-<rect width="1280" height="490" rx="24" fill="url(#bg)"/>
-<rect x="1" y="1" width="1278" height="488" rx="23" fill="url(#grid)" opacity=".35" stroke="#2b3b55"/>
-<text x="42" y="49" class="ink" font-size="24" font-weight="700">EVIDENCE IS NOT A VERDICT</text><text x="42" y="81" class="muted" font-size="18" font-weight="400">Historical content is a reason to investigate. It is not proof of present neglect.</text><rect x="42" y="119" width="470" height="246" rx="16" fill="#102b35" stroke="#31666d"/><text x="66" y="157" class="cyan" font-size="14" font-weight="700">OBSERVED</text><circle cx="74" cy="188" r="5" fill="#65e8db" class="pulse"/><text x="92" y="194" class="ink" font-size="20" font-weight="600">PHP shaped URL</text><text x="92" y="217" class="muted" font-size="15" font-weight="400">A captured path ends in .php</text><circle cx="74" cy="255" r="5" fill="#65e8db" class="pulse"/><text x="92" y="261" class="ink" font-size="20" font-weight="600">Capture timestamp</text><text x="92" y="284" class="muted" font-size="15" font-weight="400">The archive recorded a page on this date</text><circle cx="74" cy="322" r="5" fill="#65e8db" class="pulse"/><text x="92" y="328" class="ink" font-size="20" font-weight="600">Source identity</text><text x="92" y="351" class="muted" font-size="15" font-weight="400">File and payload hashes preserve provenance</text><rect x="594" y="119" width="642" height="246" rx="16" fill="#262337" stroke="#64516a"/><text x="620" y="157" class="amber" font-size="14" font-weight="700">STILL UNKNOWN</text><circle cx="628" cy="191" r="5" fill="#ffce83" class="slow"/><text x="646" y="197" class="ink" font-size="18" font-weight="500">Installed PHP runtime and patch provenance</text><circle cx="628" cy="246" r="5" fill="#ffce83" class="slow"/><text x="646" y="252" class="ink" font-size="18" font-weight="500">Whether the current owner or application is the same</text><circle cx="628" cy="301" r="5" fill="#ffce83" class="slow"/><text x="646" y="307" class="ink" font-size="18" font-weight="500">Actual maintenance history and exploitability</text><path d="M553 137V350" fill="none" stroke="#7784a3" stroke-width="2" class="travel"/><rect x="42" y="397" width="1194" height="58" rx="11" fill="#14233b" stroke="#3b516e"/><text x="66" y="433" class="cyan" font-size="13" font-weight="700">NEXT STEP</text><text x="180" y="434" class="ink" font-size="21" font-weight="550">Owner or host verification before a repair decision.</text>
+text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ink{fill:#edf5ff}.muted{fill:#b0bfd0}.cyan{fill:#70ead6}.amber{fill:#ffd398}.lilac{fill:#b9b5ff}
+.flow{stroke-dasharray:5 13;animation:flow 5s linear infinite}
+.glow{animation:glow 6s ease-in-out infinite}
+.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 28s linear infinite}
+.lift{animation:lift 7s ease-in-out infinite}
+.phase{animation:phase 12s ease-in-out infinite}
+.p2{animation-delay:3s}.p3{animation-delay:6s}.p4{animation-delay:9s}
+@keyframes flow{to{stroke-dashoffset:-108}}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes phase{0%,30%,100%{stroke-opacity:.25}10%,20%{stroke-opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.glow{opacity:1}.phase{stroke-opacity:1}}
+</style>
+</defs>
+<rect width="1200" height="520" rx="22" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="518" rx="21" fill="url(#grid)" opacity=".3" stroke="#456073"/>
+<text x="42" y="40" class="cyan" font-size="13" font-weight="700" letter-spacing="2">02 / PRESERVE</text><text x="42" y="83" class="ink" font-size="30" font-weight="650" >A candidate is a question.</text><text x="42" y="116" class="muted" font-size="18" font-weight="400" >Each record distinguishes an observation, a supplied claim and an unknown.</text><rect x="42" y="163" width="352" height="232" rx="16" fill="#112333" stroke="#2b4358" /><text x="62" y="195" class="cyan" font-size="13" font-weight="700" >OBSERVED IN ARCHIVE</text><text x="62" y="234" class="ink" font-size="23" font-weight="650" >What was captured</text><circle cx="67" cy="272" r="4" class="cyan glow"/><text x="84" y="278" class="muted" font-size="18" font-weight="400" >PHP URL path</text><circle cx="67" cy="315" r="4" class="cyan glow"/><text x="84" y="321" class="muted" font-size="18" font-weight="400" >Capture timestamp</text><circle cx="67" cy="358" r="4" class="cyan glow"/><text x="84" y="364" class="muted" font-size="18" font-weight="400" >Source identity</text><rect x="420" y="163" width="352" height="232" rx="16" fill="#112333" stroke="#2b4358" /><text x="440" y="195" class="lilac" font-size="13" font-weight="700" >SUPPLIED BY OWNER</text><text x="440" y="234" class="ink" font-size="23" font-weight="650" >What needs checking</text><circle cx="445" cy="272" r="4" class="lilac glow"/><text x="462" y="278" class="muted" font-size="18" font-weight="400" >Web runtime and build</text><circle cx="445" cy="315" r="4" class="lilac glow"/><text x="462" y="321" class="muted" font-size="18" font-weight="400" >Export date and reference</text><circle cx="445" cy="358" r="4" class="lilac glow"/><text x="462" y="364" class="muted" font-size="18" font-weight="400" >Authorization reference</text><rect x="798" y="163" width="352" height="232" rx="16" fill="#112333" stroke="#2b4358" /><text x="818" y="195" class="amber" font-size="13" font-weight="700" >STILL UNASSESSED</text><text x="818" y="234" class="ink" font-size="23" font-weight="650" >What remains open</text><circle cx="823" cy="272" r="4" class="amber glow"/><text x="840" y="278" class="muted" font-size="18" font-weight="400" >Current vulnerability</text><circle cx="823" cy="315" r="4" class="amber glow"/><text x="840" y="321" class="muted" font-size="18" font-weight="400" >Actual patch status</text><circle cx="823" cy="358" r="4" class="amber glow"/><text x="840" y="364" class="muted" font-size="18" font-weight="400" >Maintenance history</text><rect x="42" y="425" width="1108" height="64" rx="12" fill="#142936" stroke="#43606b" /><text x="64" y="464" class="ink" font-size="22" font-weight="550" >Evidence can support a review. It cannot silently become a security verdict.</text>
 </svg>

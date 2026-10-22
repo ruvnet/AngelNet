@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="522" viewBox="0 0 1200 522" role="img" aria-labelledby="title desc">
+<title id="title">Measured discovery results with explicit assessment limits</title>
+<desc id="desc">A ruOS pilot examined 13,465 scoped captures, retained 43 PHP observations across four hostnames and made zero target website requests. The first run took 7.319 seconds. All four candidates still need owner inventory; no vulnerabilities or twenty year maintenance gaps were established.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101f30"/><stop offset="1" stop-color="#09131f"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#269e99" stop-opacity=".26"/><stop offset="1" stop-color="#269e99" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#345267" stroke-width=".5"/></pattern>
+<style>
+text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ink{fill:#edf5ff}.muted{fill:#b0bfd0}.cyan{fill:#70ead6}.amber{fill:#ffd398}.lilac{fill:#b9b5ff}
+.flow{stroke-dasharray:5 13;animation:flow 5s linear infinite}
+.glow{animation:glow 6s ease-in-out infinite}
+.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 28s linear infinite}
+.lift{animation:lift 7s ease-in-out infinite}
+.phase{animation:phase 12s ease-in-out infinite}
+.p2{animation-delay:3s}.p3{animation-delay:6s}.p4{animation-delay:9s}
+@keyframes flow{to{stroke-dashoffset:-108}}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes phase{0%,30%,100%{stroke-opacity:.25}10%,20%{stroke-opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.glow{opacity:1}.phase{stroke-opacity:1}}
+</style>
+</defs>
+<rect width="1200" height="522" rx="22" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="520" rx="21" fill="url(#grid)" opacity=".3" stroke="#456073"/>
+<text x="42" y="40" class="cyan" font-size="13" font-weight="700" letter-spacing="2">MEASURED / RUOS PILOT</text><text x="42" y="83" class="ink" font-size="30" font-weight="650" >A working path through the archive.</text><text x="42" y="116" class="muted" font-size="18" font-weight="400" >One bounded discovery run · October 22, 2026 UTC · No throughput guarantee</text><rect x="42" y="158" width="262" height="139" rx="16" fill="#112333" stroke="#2b4358" /><text x="62" y="223" class="ink" font-size="47" font-weight="700" >13,465</text><text x="62" y="265" class="muted" font-size="18" font-weight="400" >scoped captures</text><path d="M62 285H284" stroke="#70ead6" stroke-width="2" class="phase p1"/><rect x="324" y="158" width="262" height="139" rx="16" fill="#112333" stroke="#2b4358" /><text x="344" y="223" class="ink" font-size="47" font-weight="700" >43</text><text x="344" y="265" class="muted" font-size="18" font-weight="400" >PHP observations</text><path d="M344 285H566" stroke="#70ead6" stroke-width="2" class="phase p2"/><rect x="606" y="158" width="262" height="139" rx="16" fill="#112333" stroke="#2b4358" /><text x="626" y="223" class="ink" font-size="47" font-weight="700" >4</text><text x="626" y="265" class="muted" font-size="18" font-weight="400" >candidate hostnames</text><path d="M626 285H848" stroke="#70ead6" stroke-width="2" class="phase p3"/><rect x="888" y="158" width="262" height="139" rx="16" fill="#112333" stroke="#2b4358" /><text x="908" y="223" class="ink" font-size="47" font-weight="700" >0</text><text x="908" y="265" class="muted" font-size="18" font-weight="400" >target requests</text><path d="M908 285H1130" stroke="#70ead6" stroke-width="2" class="phase p4"/><text x="44" y="343" class="cyan" font-size="24" font-weight="650" >7.319s first run</text><text x="393" y="343" class="ink" font-size="24" font-weight="600" >101.6 MiB downloaded</text><text x="822" y="343" class="ink" font-size="24" font-weight="600" >8 archive requests</text><text x="44" y="382" class="muted" font-size="19" font-weight="400" >Cached ruOS repeat: 5.977s · 1.96 MiB · identical candidate export</text><rect x="42" y="418" width="1108" height="72" rx="12" fill="#2a2830" stroke="#6f5d48" /><text x="65" y="449" class="amber" font-size="24" font-weight="650" >4 candidates still need owner inventory.</text><text x="65" y="477" class="muted" font-size="18" font-weight="400" >No vulnerabilities or twenty year maintenance gaps were established.</text>
+</svg>

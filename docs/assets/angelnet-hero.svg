@@ -1,27 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
-<title id="title">AngelNet: good deeds done</title><desc id="desc">A discovery and evidence index for reviewing legacy PHP candidates. Animated archive signals surround a winged A. Early release 0.2.</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101e35"/><stop offset="1" stop-color="#080f20"/></linearGradient>
-<radialGradient id="halo"><stop stop-color="#1b8f96" stop-opacity=".35"/><stop offset="1" stop-color="#1b8f96" stop-opacity="0"/></radialGradient>
-<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#263651" stroke-width=".5"/></pattern>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+<title id="title">AngelNet: care for the web that cares for people</title>
+<desc id="desc">Find sites worth helping through public archive discovery, local retrieval and evidence review. Working early release 0.2.0. Orbiting signals surround an angel emblem; they are illustrative, not live activity.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101f30"/><stop offset="1" stop-color="#09131f"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#269e99" stop-opacity=".26"/><stop offset="1" stop-color="#269e99" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#345267" stroke-width=".5"/></pattern>
 <style>
-text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.ink{fill:#eef5ff}.muted{fill:#a9b8d0}.cyan{fill:#65e8db}.amber{fill:#ffce83}
-.travel{stroke-dasharray:8 18;animation:flow 3s linear infinite}
-.pulse{animation:glow 4s ease-in-out infinite}.slow{animation:glow 5s ease-in-out infinite;animation-delay:1s}
-@keyframes flow{to{stroke-dashoffset:-104}}
-@keyframes glow{0%,100%{opacity:.4}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}.pulse,.slow{opacity:1}}
-</style></defs>
-<rect width="1280" height="400" rx="24" fill="url(#bg)"/>
-<rect x="1" y="1" width="1278" height="398" rx="23" fill="url(#grid)" opacity=".35" stroke="#2b3b55"/>
-<circle cx="1030" cy="180" r="250" fill="url(#halo)"/>
-<path d="M48 63L67 45L86 63M57 58L48 45M77 58L86 45" fill="none" stroke="#65e8db" stroke-width="3" stroke-linecap="round"/>
-<rect x="1020" y="38" width="210" height="34" rx="17" fill="#152d3b" stroke="#335459"/>
-<circle cx="1042" cy="55" r="4" fill="#65e8db" class="pulse"/>
-<text x="108" y="61" class="cyan" font-size="16" font-weight="650">GOOD DEEDS DONE</text><text x="1060" y="60" class="cyan" font-size="13" font-weight="650">EARLY RELEASE 0.2</text><text x="48" y="154" class="ink" font-size="76" font-weight="750">AngelNet</text><text x="50" y="207" class="ink" font-size="30" font-weight="500">Find what needs a closer look.</text><text x="50" y="247" class="muted" font-size="19" font-weight="400">Public archives. Traceable evidence. Local retrieval.</text><text x="50" y="278" class="muted" font-size="19" font-weight="400">A starting point for the repair of neglected PHP sites.</text><g transform="translate(1010 195)">
-<circle r="98" fill="none" stroke="#28465a"/><circle r="69" fill="#102738" stroke="#4b8d93"/>
-<path d="M-30 23L0-35L30 23M-18 3H18M-31-6L-65-27L-51 8L-27 20M31-6L65-27L51 8L27 20" fill="none" stroke="#65e8db" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle r="117" fill="none" stroke="#65e8db" stroke-width="2" opacity=".65" class="travel"/>
-<circle cx="-98" r="7" fill="#65e8db" class="pulse"/><circle cy="98" r="7" fill="#ffce83" class="slow"/><circle cx="98" r="7" fill="#adc1ff" class="pulse"/>
-</g><rect x="50" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="68" y="347" fill="#65e8db" font-size="14" font-weight="650">01  DISCOVER</text><rect x="260" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="278" y="347" fill="#adc1ff" font-size="14" font-weight="650">02  PRESERVE</text><rect x="470" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="488" y="347" fill="#ffce83" font-size="14" font-weight="650">03  REVIEW</text>
+text{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ink{fill:#edf5ff}.muted{fill:#b0bfd0}.cyan{fill:#70ead6}.amber{fill:#ffd398}.lilac{fill:#b9b5ff}
+.flow{stroke-dasharray:5 13;animation:flow 5s linear infinite}
+.glow{animation:glow 6s ease-in-out infinite}
+.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 28s linear infinite}
+.lift{animation:lift 7s ease-in-out infinite}
+.phase{animation:phase 12s ease-in-out infinite}
+.p2{animation-delay:3s}.p3{animation-delay:6s}.p4{animation-delay:9s}
+@keyframes flow{to{stroke-dashoffset:-108}}
+@keyframes glow{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes phase{0%,30%,100%{stroke-opacity:.25}10%,20%{stroke-opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.glow{opacity:1}.phase{stroke-opacity:1}}
+</style>
+</defs>
+<rect width="1200" height="510" rx="22" fill="url(#bg)"/>
+<rect x="1" y="1" width="1198" height="508" rx="21" fill="url(#grid)" opacity=".3" stroke="#456073"/>
+<circle cx="964" cy="250" r="275" fill="url(#halo)"/><text x="46" y="55" class="cyan" font-size="14" font-weight="700" letter-spacing="1.6">CARE FOR THE WEB THAT CARES FOR PEOPLE</text><text x="42" y="156" class="ink" font-size="82" font-weight="750" >AngelNet</text><text x="46" y="216" class="ink" font-size="34" font-weight="600" >Find the sites worth helping.</text><text x="46" y="263" class="muted" font-size="22" font-weight="400" >Discover public archive evidence.</text><text x="46" y="297" class="muted" font-size="22" font-weight="400" >Build a reviewable case for maintenance.</text><rect x="46" y="344" width="164" height="34" rx="17" fill="#102932" stroke="#34545c" /><text x="62" y="367" class="cyan" font-size="14" font-weight="650" >DISCOVERY</text><rect x="222" y="344" width="164" height="34" rx="17" fill="#102932" stroke="#34545c" /><text x="238" y="367" class="lilac" font-size="14" font-weight="650" >RETRIEVAL</text><rect x="398" y="344" width="200" height="34" rx="17" fill="#102932" stroke="#34545c" /><text x="414" y="367" class="amber" font-size="14" font-weight="650" >EVIDENCE REVIEW</text><text x="46" y="440" class="muted" font-size="17" font-weight="400" >Python + RuVector + ruOS</text><text x="46" y="469" class="muted" font-size="15" font-weight="400" >Working early release · 0.2.0</text><g transform="translate(960 248)"><circle r="157" fill="none" stroke="#2c4e5c"/><circle r="119" fill="none" stroke="#36576a" stroke-dasharray="3 10"/><g class="orbit"><circle r="157" fill="none" stroke="#70ead6" stroke-width="2" stroke-dasharray="72 915"/><circle r="119" fill="none" stroke="#b9b5ff" stroke-width="2" stroke-dasharray="42 705"/></g><circle r="77" fill="#112e39" stroke="#5b9b9f"/><g class="lift"><ellipse cy="-46" rx="23" ry="8" fill="none" stroke="#ffd398" stroke-width="3"/><path d="M-23 31L0-19L23 31M-13 9H13M-25-5L-58-24L-46 10L-25 23M25-5L58-24L46 10L25 23" fill="none" stroke="#70ead6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><circle cx="-157" cy="0" r="13" fill="#112333" stroke="#70ead6"/><circle cx="-157" cy="0" r="5" fill="#70ead6" class="glow"/><circle cx="79" cy="-136" r="13" fill="#112333" stroke="#b9b5ff"/><circle cx="79" cy="-136" r="5" fill="#b9b5ff" class="glow"/><circle cx="79" cy="136" r="13" fill="#112333" stroke="#ffd398"/><circle cx="79" cy="136" r="5" fill="#ffd398" class="glow"/></g><text x="960" y="450" class="muted" font-size="17" font-weight="500" text-anchor="middle">Archive → evidence → review</text>
 </svg>
