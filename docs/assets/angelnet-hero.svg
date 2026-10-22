@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+<title id="title">AngelNet: good deeds done</title><desc id="desc">A discovery and evidence index for reviewing legacy PHP candidates. Animated archive signals surround a winged A. Early release 0.2.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101e35"/><stop offset="1" stop-color="#080f20"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#1b8f96" stop-opacity=".35"/><stop offset="1" stop-color="#1b8f96" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#263651" stroke-width=".5"/></pattern>
+<style>
+text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ink{fill:#eef5ff}.muted{fill:#a9b8d0}.cyan{fill:#65e8db}.amber{fill:#ffce83}
+.travel{stroke-dasharray:8 18;animation:flow 3s linear infinite}
+.pulse{animation:glow 4s ease-in-out infinite}.slow{animation:glow 5s ease-in-out infinite;animation-delay:1s}
+@keyframes flow{to{stroke-dashoffset:-104}}
+@keyframes glow{0%,100%{opacity:.4}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.pulse,.slow{opacity:1}}
+</style></defs>
+<rect width="1280" height="400" rx="24" fill="url(#bg)"/>
+<rect x="1" y="1" width="1278" height="398" rx="23" fill="url(#grid)" opacity=".35" stroke="#2b3b55"/>
+<circle cx="1030" cy="180" r="250" fill="url(#halo)"/>
+<path d="M48 63L67 45L86 63M57 58L48 45M77 58L86 45" fill="none" stroke="#65e8db" stroke-width="3" stroke-linecap="round"/>
+<rect x="1020" y="38" width="210" height="34" rx="17" fill="#152d3b" stroke="#335459"/>
+<circle cx="1042" cy="55" r="4" fill="#65e8db" class="pulse"/>
+<text x="108" y="61" class="cyan" font-size="16" font-weight="650">GOOD DEEDS DONE</text><text x="1060" y="60" class="cyan" font-size="13" font-weight="650">EARLY RELEASE 0.2</text><text x="48" y="154" class="ink" font-size="76" font-weight="750">AngelNet</text><text x="50" y="207" class="ink" font-size="30" font-weight="500">Find what needs a closer look.</text><text x="50" y="247" class="muted" font-size="19" font-weight="400">Public archives. Traceable evidence. Local retrieval.</text><text x="50" y="278" class="muted" font-size="19" font-weight="400">A starting point for the repair of neglected PHP sites.</text><g transform="translate(1010 195)">
+<circle r="98" fill="none" stroke="#28465a"/><circle r="69" fill="#102738" stroke="#4b8d93"/>
+<path d="M-30 23L0-35L30 23M-18 3H18M-31-6L-65-27L-51 8L-27 20M31-6L65-27L51 8L27 20" fill="none" stroke="#65e8db" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle r="117" fill="none" stroke="#65e8db" stroke-width="2" opacity=".65" class="travel"/>
+<circle cx="-98" r="7" fill="#65e8db" class="pulse"/><circle cy="98" r="7" fill="#ffce83" class="slow"/><circle cx="98" r="7" fill="#adc1ff" class="pulse"/>
+</g><rect x="50" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="68" y="347" fill="#65e8db" font-size="14" font-weight="650">01  DISCOVER</text><rect x="260" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="278" y="347" fill="#adc1ff" font-size="14" font-weight="650">02  PRESERVE</text><rect x="470" y="321" width="190" height="40" rx="8" fill="#12233a" stroke="#2d415d"/><text x="488" y="347" fill="#ffce83" font-size="14" font-weight="650">03  REVIEW</text>
+</svg>

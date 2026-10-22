@@ -1,0 +1,17 @@
+{
+  "name": "angelnet",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/wet_vectors.test.mjs",
+    "test:vectors": "node --test tests/wet_vectors.test.mjs",
+    "check:docs": "python3 scripts/check_docs.py"
+  },
+  "dependencies": {
+    "ruvector": "0.2.25"
+  },
+  "description": "Evidence based discovery of legacy PHP candidates from public web archives",
+  "engines": {
+    "node": ">=20"
+  }
+}

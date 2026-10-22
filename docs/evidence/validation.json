@@ -1,0 +1,37 @@
+{
+  "release": "0.2.0",
+  "observed_at_utc": "2026-10-22",
+  "scope": "Development acceptance; source revision will be supplied by Git history",
+  "python_tests": {"local_passed": 27, "ruos_passed": 27},
+  "native_ruvector_integration_tests": {"local_passed": 1, "ruos_passed": 1},
+  "runtime": {"ruos_python": "3.12.3", "ruos_node": "20.20.2", "ruvector": "0.2.25", "backend": "native"},
+  "real_sample": {
+    "source": "https://raw.githubusercontent.com/commoncrawl/whirlwind-python/main/whirlwind.warc.wet.gz",
+    "sha256": "b2f1db3943b2bfbb34ad807c36e5eff315cc28efd474edf5a91cbb4962a1deef",
+    "compressed_bytes": 3006,
+    "decompressed_bytes": 5613,
+    "warc_records": 2,
+    "text_documents": 1,
+    "php_candidates": 0,
+    "parse_seconds": 0.007,
+    "build_ms": 23.45823,
+    "reopen_and_query_ms": 10.62955,
+    "persistence_verified": true,
+    "interpretation": "Small format and persistence check, not a throughput or relevance benchmark"
+  },
+  "discovery_controls": {
+    "commoncrawl": ["HTTP 504", "HTTP 504"],
+    "wayback": ["HTTP 503"],
+    "live_php_candidates_collected": 0,
+    "status": "partial"
+  },
+  "embedding": {"dimensions": 384, "model": "ruvector-local-ngram-v1:384:3", "semantic_model": false},
+  "not_verified": [
+    "Nonempty live PHP discovery",
+    "Maintenance history classification accuracy",
+    "Transformer semantic retrieval",
+    "Large segment capacity",
+    "Automated repairs"
+  ],
+  "privacy": "Machine identifiers, private paths and executor transcripts omitted"
+}
