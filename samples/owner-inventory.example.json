@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "inventories": [
+    {
+      "host": "example.org",
+      "observed_at": "2026-10-22T00:00:00Z",
+      "source": {
+        "kind": "owner_export",
+        "reference": "ILLUSTRATIVE ONLY: replace with the owner export reference"
+      },
+      "authorization_reference": "ILLUSTRATIVE ONLY: replace with an actual authorization record",
+      "runtime_scope": "unknown",
+      "php": {}
+    }
+  ]
+}

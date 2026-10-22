@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-10-22T01:14:35.767595+00:00",
+  "script_sha256": "0436cd836bbe1b474475ba2d078f014e03c50060c9a108fcc6ce69ed146c2c20",
+  "hosts": ["local macOS", "ruOS Work Desktop"],
+  "local_python_tests_passed": 45,
+  "local_native_ruvector_tests_passed": 1,
+  "ruos_review_tests_passed": 11,
+  "pilot_sites": 4,
+  "pilot_stages": {"needs_owner_inventory": 4},
+  "network_requests": 0,
+  "confirmed_vulnerabilities": 0,
+  "owner_inventory_supplied": false,
+  "owner_identity_verification": "not_implemented",
+  "advisory_matching": "not_implemented",
+  "support_source": "https://www.php.net/supported-versions.php",
+  "support_snapshot_sha256": "589b0e69d8cf5811b4a25c8c6b52c153b987ccb883369a816163685b9dec40e5",
+  "support_snapshot_valid_until": "2026-11-21",
+  "inventory_max_age_days": 7,
+  "archive_max_age_days": 90,
+  "candidate_hostnames_published": false
+}

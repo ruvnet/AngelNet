@@ -30,9 +30,12 @@ An old capture proves that content was archived at that time. It does not prove 
 | Candidate index | Deduplicate observations in SQLite and export CSV and JSONL |
 | Text retrieval | Store 384 dimensional lexical vectors in native RuVector and search across processes |
 | Execution evidence | Record scope, limits, source identity, errors and completion status |
+| Offline review queue | Identify missing owner inventory, web runtime evidence, build provenance and stale observations |
 | ruOS execution | Run the same scripts through the desktop executor with an explicit machine and timeout |
 
 **Not implemented:** runtime inspection, vulnerability confirmation, automated patching, production deployment to candidate sites, transformer semantic retrieval or continuous monitoring.
+
+Discovery and assessment are separate. The [review queue](docs/REVIEW.md) accepts owner supplied deployment facts, records their provenance and identifies the next missing evidence. It does not authenticate those facts or match advisories yet.
 
 ## Quick start
 
@@ -135,6 +138,18 @@ Full segments may exceed the default 64 MiB input cap. Increase `--max-bytes` ex
 
 The metadata and text paths complement each other. CDX is useful for discovery by URL and date. WET provides text for retrieval. Original HTTP response details require WAT or WARC. [Common Crawl format guide](https://commoncrawl.org/get-started)
 
+### Turn candidates into an evidence queue
+
+```sh
+python3 review_queue.py \
+  --sites output/static/sites.jsonl \
+  --out output/review
+```
+
+Without deployment inventory, each candidate stays at `needs_owner_inventory`. Add `--inventory owner-inventory.json` only when you have the corresponding owner or hosting export. The [illustrative template](samples/owner-inventory.example.json) shows the fields; its placeholders are not evidence.
+
+The default freshness windows are 7 days for supplied deployment inventory and 90 days for archive observations. These are configurable review policies, not accuracy guarantees. A complete supplied inventory can reach `ready_for_advisory_review`; it never becomes a confirmed vulnerability automatically. PHP branch support is checked against a dated official snapshot with an expiry date, separately from patch status.
+
 | Archive format | Useful evidence | Important limit |
 | :--- | :--- | :--- |
 | CDX | Capture URL, timestamp, status and MIME metadata | Limited to what the selected index contains |
@@ -191,6 +206,8 @@ The largest accuracy risk is mistaking historical content for present neglect. T
 | `wet-documents.jsonl` | Extracted text with capture and source metadata |
 | `wet-run.json` | Latest WET execution receipt, replaced on each import |
 | `static-run.json` | Static index scope, selected block counts, byte ranges, hashes and errors |
+| `review.jsonl`, `review.csv` | Evidence gaps and review stage per candidate |
+| `review-run.json` | Input hashes, freshness policies, stage counts and snapshot provenance |
 | `vectors/manifest.json` | Embedding identity, dimensions, count and persistence check |
 
 Exports include prior records in the same SQLite database. A run that adds zero observations can still export existing candidates. Compare `observations_added` with `sites_total` when reviewing progress.
@@ -271,7 +288,7 @@ No schedule is created. No machine is provisioned. Credentials, machine identifi
 
 The development acceptance record contains:
 
-1. **34 Python tests** passing locally, including static index interval selection, range validation, decompression bounds and partial failures. The original 27 tests and the new static tests have also been exercised on ruOS.
+1. **45 Python tests** passing locally, including static index selection and review evidence boundaries. The original 27 tests and the static tests have also been exercised on ruOS; review deployment evidence is documented separately in the [review guide](docs/REVIEW.md).
 2. **One native RuVector integration test** passing on both hosts, checking persistence and retrieval across separate processes, provenance and rejection of a model mismatch.
 3. **One real Common Crawl sample** parsed, indexed and searched on ruOS. It contains one text document and zero PHP candidates.
 4. **Unsuccessful live discovery controls:** Common Crawl returned HTTP 504 and Wayback returned HTTP 503. Those attempts collected no candidates and were recorded as partial.
@@ -306,11 +323,11 @@ SQLite observations commit in batches. Exports are individually replaced atomica
 
 ## Next milestones
 
-1. Establish precision and recall on an owner supplied corpus with known maintenance histories.
-2. Add WAT or WARC evidence for response headers and application markers.
-3. Repair and pin the semantic embedding runtime, then evaluate retrieval relevance.
-4. Add resumable, partitioned WET processing with durable checkpoints.
-5. Design a separate authorized repair workflow with isolated copies, regression tests and recovery evidence.
+1. Validate the evidence queue with ten consenting organizations and owner supplied deployment facts.
+2. Add advisory matching for exact packages and builds, including vendor patch provenance and vulnerability prerequisites.
+3. Add WAT or WARC evidence for archived response headers and application markers.
+4. Repair the semantic embedding runtime and evaluate retrieval on labelled examples before scaling WET processing.
+5. Design a separate authorized repair workflow with isolated copies, regression tests and recovery evidence. See the [ranked improvement plan](docs/REVIEW.md).
 
 ## Contributing and licensing
 

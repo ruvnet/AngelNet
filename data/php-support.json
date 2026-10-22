@@ -1,0 +1,12 @@
+{
+  "source": "https://www.php.net/supported-versions.php",
+  "observed_on": "2026-10-22",
+  "valid_until": "2026-11-21",
+  "purpose": "Upstream branch lifecycle only; not a security advisory or proof of patch status",
+  "branches": {
+    "8.2": {"active_until": "2024-12-31", "security_until": "2026-12-31"},
+    "8.3": {"active_until": "2025-12-31", "security_until": "2027-12-31"},
+    "8.4": {"active_until": "2026-12-31", "security_until": "2028-12-31"},
+    "8.5": {"active_until": "2027-12-31", "security_until": "2029-12-31"}
+  }
+}
