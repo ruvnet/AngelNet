@@ -1,0 +1,51 @@
+{
+  "execution": "ruOS Work Desktop",
+  "started_at": "2026-10-22T01:03:18.883126+00:00",
+  "collection": "CC-MAIN-2026-43",
+  "pilot_script_sha256": "f5741b5e58d3ecbda66830d1c1ef33c0c9297c0b5253a11836873d219ddd565e",
+  "status": "complete_bounded_sample",
+  "domains_in_scope": 3,
+  "all_overlapping_blocks_selected": true,
+  "blocks_read": 7,
+  "records_examined": 21000,
+  "scoped_records": 13465,
+  "observations_added": 43,
+  "sites_total": 4,
+  "target_requests": 0,
+  "provider_requests": 8,
+  "downloaded_bytes": 106578043,
+  "elapsed_seconds": 7.319,
+  "cluster": {
+    "url": "https://data.commoncrawl.org/cc-index/collections/CC-MAIN-2026-43/indexes/cluster.idx",
+    "bytes": 104520381,
+    "sha256": "5be2d43599aa978d252433007bf7843aae4d241584500e7d1cd1ccff71fe33fb",
+    "cache_hit": false
+  },
+  "local_remote_exports_identical": true,
+  "retained_capture_range": [
+    "20261005140337",
+    "20261015113905"
+  ],
+  "twenty_year_candidates": 0,
+  "maintenance_status": "unknown",
+  "vulnerability_status": "not_assessed",
+  "candidate_hostnames_published": false,
+  "paid_api_calls": 0,
+  "new_machines_provisioned": 0,
+  "compute_cost": "not_measured",
+  "final_script_recheck": {
+    "script_sha256": "e3f4c14778a851bb87c08217a1af397261cab3fba3eea2d1be54deba60dd8eaa",
+    "execution": "ruOS Work Desktop",
+    "static_tests_passed": 7,
+    "status": "complete_bounded_sample",
+    "cluster_cache_hit": true,
+    "provider_requests": 7,
+    "downloaded_bytes": 2057662,
+    "elapsed_seconds": 5.977,
+    "scoped_records": 13465,
+    "observations_added": 43,
+    "sites_total": 4,
+    "target_requests": 0,
+    "candidate_export_matches_initial_pilot": true
+  }
+}

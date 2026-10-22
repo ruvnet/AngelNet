@@ -8,7 +8,7 @@ AngelNet helps find legacy PHP sites that deserve a closer look. It turns public
 
 The aim is to make neglected software easier to discover and eventually repair. The current release delivers discovery and indexing. It does not patch websites or determine whether they are vulnerable.
 
-**Status: early working release, version 0.2.0.** The parser, deduplication, persistence and native vector retrieval have been tested locally and on ruOS. Live archive discovery remains limited by provider availability and incomplete archive coverage. No verified inventory of sites unmaintained for 20 years has been produced.
+**Status: early working release, version 0.2.0.** Live discovery now works through Common Crawl's static index files, including a successful ruOS pilot. The parser, deduplication, persistence and native vector retrieval have also been tested. Archive coverage remains incomplete, and no verified inventory of sites unmaintained for 20 years has been produced.
 
 ## Why AngelNet exists
 
@@ -23,6 +23,7 @@ An old capture proves that content was archived at that time. It does not prove 
 | Capability | Current behavior |
 | :--- | :--- |
 | Common Crawl discovery | Query a bounded CDX page for each supplied domain, including subdomains |
+| Static index fallback | Cache a pinned Common Crawl index and read scoped gzip blocks directly when the query API fails |
 | Historical discovery | Query Wayback for PHP captures older than a configurable age threshold |
 | Offline metadata import | Read local CDX JSONL when providers are unavailable or discovery happened elsewhere |
 | WET ingestion | Stream local plain or gzip WET records using byte lengths and explicit limits |
@@ -67,6 +68,23 @@ python3 angel_index.py \
 ```
 
 Exit code `0` means the bounded sample completed, including an empty sample. Exit code `2` means invalid arguments or partial work. Read the receipt before interpreting a zero result.
+
+### When the archive query API times out
+
+Use the static index path. It contacts only Common Crawl's data host and does not require the query API or Wayback:
+
+```sh
+python3 cc_static.py \
+  --domain example.org \
+  --collection CC-MAIN-2026-43 \
+  --blocks-per-domain 10 \
+  --max-requests 31 --max-seconds 120 \
+  --out output/static
+```
+
+The first run caches approximately 100 MiB for this collection. Later runs in the same output directory reuse that file and download only selected compressed blocks. The default total download cap is 144 MiB. Coverage and checksums are recorded in `static-run.json`.
+
+A medical and humanitarian pilot examined 13,465 scoped captures, retained 43 PHP observations across four hostnames and completed on ruOS in 7.319 seconds. It made eight archive requests and zero requests to the selected websites. Those observations were captured in October 2026; none establish twenty years without maintenance. [Static discovery guide and measured evidence](docs/STATIC.md)
 
 ### 2. Parse WET and search with RuVector
 
@@ -172,6 +190,7 @@ The largest accuracy risk is mistaking historical content for present neglect. T
 | `runs/` | Individual metadata execution receipts |
 | `wet-documents.jsonl` | Extracted text with capture and source metadata |
 | `wet-run.json` | Latest WET execution receipt, replaced on each import |
+| `static-run.json` | Static index scope, selected block counts, byte ranges, hashes and errors |
 | `vectors/manifest.json` | Embedding identity, dimensions, count and persistence check |
 
 Exports include prior records in the same SQLite database. A run that adds zero observations can still export existing candidates. Compare `observations_added` with `sites_total` when reviewing progress.
@@ -252,14 +271,15 @@ No schedule is created. No machine is provisioned. Credentials, machine identifi
 
 The development acceptance record contains:
 
-1. **27 Python tests** passing locally and on ruOS, covering archive parsing, redaction, bounds, false PHP matches, duplicate imports and partial failures.
+1. **34 Python tests** passing locally, including static index interval selection, range validation, decompression bounds and partial failures. The original 27 tests and the new static tests have also been exercised on ruOS.
 2. **One native RuVector integration test** passing on both hosts, checking persistence and retrieval across separate processes, provenance and rejection of a model mismatch.
 3. **One real Common Crawl sample** parsed, indexed and searched on ruOS. It contains one text document and zero PHP candidates.
 4. **Unsuccessful live discovery controls:** Common Crawl returned HTTP 504 and Wayback returned HTTP 503. Those attempts collected no candidates and were recorded as partial.
+5. **Successful static discovery:** a three domain ruOS pilot produced 43 PHP observations across four hostnames, with candidate exports identical to the local run. [Measured static pilot](docs/evidence/static-pilot.json)
 
 The single document run measured approximately 7 ms for parsing, 23 ms for index construction and 11 ms for reopening and querying within the Node process. These are small format checks, not capacity or search quality benchmarks. See the [sanitized validation record](docs/evidence/validation.json).
 
-Still unverified: a nonempty live PHP discovery run, accuracy against independently known maintenance histories, semantic relevance and sustained operation on large WET segments.
+Still unverified: accuracy against independently known maintenance histories, semantic relevance and sustained operation on large WET segments.
 
 Run the acceptance suite:
 
@@ -276,7 +296,7 @@ The CI workflow runs those checks without contacting archive providers. The opti
 | Symptom | Next action |
 | :--- | :--- |
 | HTTP 429 or 503 | Stop calls to that provider and inspect the partial receipt |
-| HTTP 504 or timeout | Treat coverage as incomplete; use a local archive export or retry later |
+| HTTP 504 or timeout | Treat coverage as incomplete; use `cc_static.py` or a local archive export |
 | Output lock exists | Check the earlier process before removing `.lock` |
 | Vector directory already exists | Choose a fresh store directory; keep the earlier result intact |
 | Native backend unavailable | Check the supported platform and reinstall from the lockfile |

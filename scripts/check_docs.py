@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     checked = 0
-    for path in [ROOT/'README.md', ROOT/'CONTRIBUTING.md', ROOT/'SECURITY.md', ROOT/'docs/WET.md']:
+    for path in [ROOT/'README.md', ROOT/'CONTRIBUTING.md', ROOT/'SECURITY.md', *sorted((ROOT/'docs').glob('*.md'))]:
         text = re.sub(r'```.*?```', '', path.read_text(), flags=re.S)
         targets = re.findall(r'\]\(([^)]+)\)', text) + re.findall(r'src="([^"]+)"', text)
         for target in targets:
